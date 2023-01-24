@@ -1,0 +1,527 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--master-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d8982b;
+}
+:root {
+  --master-color: #fec868;
+
+  --main-color: rgb(254 200 104 / 20%);
+}
+
+.badges-title {
+  position: relative;
+}
+
+.master-title {
+  width: fit-content;
+  border: 1px solid #eee;
+  color: white;
+  margin: 0 auto 80px;
+  padding: 10px 30px;
+  font-size: 45px;
+  border-radius: 6px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.master-title:hover {
+  background-color: var(--main-color);
+  border-color: var(--master-color);
+  color: var(--master-color);
+}
+
+.badges-title .Pyramids {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.badges-title .Pyramids-left {
+  left: 10px;
+  width: 70px;
+  animation: move-left 0.5s linear infinite;
+}
+
+@keyframes move-left {
+  0% {
+    left: 10px;
+    width: 70px;
+  }
+  50% {
+    left: 25px;
+    width: 70px;
+  }
+  100% {
+    left: 10px;
+    width: 70px;
+  }
+}
+
+.badges-title .Pyramids-right {
+  right: 10px;
+  animation: move-right 0.5s linear infinite;
+  width: 70px;
+}
+
+@keyframes move-right {
+  0% {
+    right: 10px;
+    width: 70px;
+  }
+  50% {
+    right: 25px;
+    width: 70px;
+  }
+  100% {
+    right: 10px;
+    width: 70px;
+  }
+}
+
+.badges-title .Pyramids .one,
+.two,
+.there,
+.four,
+.five,
+.sex {
+  height: 3px;
+  background-color: var(--master-color);
+  margin: 0 auto 5px;
+}
+
+.badges-title.Pyramids .one {
+  width: 10px;
+}
+
+.badges-title .Pyramids .two {
+  width: 20px;
+}
+
+.badges-title .Pyramids .there {
+  width: 30px;
+}
+
+.badges-title .Pyramids .four {
+  width: 40px;
+}
+
+.badges-title .Pyramids .five {
+  width: 50px;
+}
+
+.badges-title .Pyramids .sex {
+  width: 60px;
+}
+
+/* ///////////////////////////////////////////////////////start header/////////////////////////////////////////////////////////// */
+header {
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+}
+
+header .image {
+  background-color: rgb(254 200 104 / 90%);
+}
+header .image img {
+  height: 50px;
+  width: 50px;
+}
+
+@media (max-width: 767px) {
+  header .image {
+    margin: 0 auto;
+  }
+}
+header nav ul {
+  position: relative;
+}
+header nav ul::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  background-color: white;
+  height: 1px;
+}
+
+header nav ul:hover::before {
+  background-color: var(--master-color);
+}
+
+@media (max-width: 767px) {
+  header nav ul {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+header nav ul li .active {
+  color: var(--master-color);
+}
+
+@media (max-width: 767px) {
+  header nav ul li:first-child {
+    margin-left: 0;
+  }
+}
+
+header nav ul li a:hover {
+  text-decoration: none;
+  color: var(--master-color);
+}
+
+/* //////////////////////////////////////////////////  End header  ///////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// start loading  /////////////////////////////////////////////////////////////// */
+.loading {
+  background-image: url(../imgs/loading.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.loading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loading .text {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  background-color: rgb(254 200 104 / 20%);
+}
+
+@media (max-width: 767px) {
+  .loading .text {
+    width: 100%;
+  }
+}
+
+.loading .down-right,
+.loading .down-left,
+.loading .top-left,
+.loading .top-right {
+  color: var(--master-color);
+  transition: 0.5s;
+}
+
+.loading .top-right {
+  right: 10px;
+  top: -50px;
+  transform: rotate(180deg);
+}
+
+.loading .top-left {
+  left: 10px;
+  top: -50px;
+  transform: rotate(180deg);
+}
+
+.loading .down-right {
+  right: 10px;
+  bottom: -50px;
+}
+
+.loading .down-left {
+  left: 10px;
+  bottom: -50px;
+}
+
+.loading .move i {
+  animation: top-down 1.5s infinite;
+}
+
+@keyframes top-down {
+  0%,
+  10%,
+  20%,
+  30%,
+  50%,
+  70%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.loading .social {
+  bottom: 50px;
+  right: 30px;
+}
+
+.loading .social::before {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: -15px;
+  width: 120px;
+  height: 2px;
+  background-color: white;
+}
+
+.loading .social:hover::before {
+  background-color: var(--master-color);
+}
+
+.loading .social li {
+  background-color: var(--main-color);
+}
+
+.loading .social li:hover i {
+  color: var(--master-color);
+}
+
+/* //////////////////////////////////////////////////  End loading  ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// start About  /////////////////////////////////////////////////////////////// */
+.About {
+  background-image: url(../imgs/about.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.About::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.About .content {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.About .content .box {
+  background-color: var(--main-color);
+  border: 1px solid var(--master-color);
+}
+
+.About .content .box .image img {
+  max-width: 100%;
+}
+
+.About .content .box p {
+  line-height: 1.5;
+}
+
+/* //////////////////////////////////////////////////  End About   ///////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// Start temples  /////////////////////////////////////////////////////////////// */
+
+.Temples {
+  background-image: url(../imgs/loading.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.Temples::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Temples .content {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.Temples .content .box {
+  border: 1px solid var(--master-color);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  border-radius: 6px;
+}
+
+@media (max-width: 576px) {
+  .Temples .content .box {
+    height: 300px;
+  }
+}
+
+.Temples .content .box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Temples .content .box:hover img {
+  transform: scale(1.2) rotate(-6deg);
+}
+
+.Temples .content .box:hover .title {
+  bottom: 0;
+}
+
+.Temples .content .box img {
+  max-width: 100%;
+  height: 100%;
+  transition: 0.2s linear;
+}
+
+.Temples .content .box .title {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  background-color: #fec86880;
+  transition: 0.3s;
+}
+
+.Temples .content .box .title h3 {
+  color: #1a1a1a;
+}
+/* //////////////////////////////////////////////////  end temples  ///////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// start services  /////////////////////////////////////////////////////////////// */
+
+.Services {
+  background-image: url(../imgs/about.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.Services::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Services .content {
+  background-color: var(--main-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.Services .content .box {
+  position: relative;
+  border: 1px solid var(--master-color);
+  width: 250px;
+}
+
+.Services .content .box i {
+  color: var(--master-color);
+}
+
+.Services .content .box .name {
+  font-weight: normal;
+}
+
+/* //////////////////////////////////////////////////  End services ///////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////  start footer ///////////////////////////////////////////////////////////////// */
+
+.footer {
+  position: relative;
+  background-color: #000000ed;
+  height: 30vh;
+}
+
+.footer .social::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  width: 120px;
+  height: 2px;
+  background-color: white;
+}
+
+.footer .social:hover::before {
+  background-color: var(--master-color);
+}
+
+.footer ul li {
+  background-color: var(--main-color);
+}
+
+.footer ul li:hover i {
+  color: var(--master-color);
+  font-size: 16px;
+}
+
+.footer p span {
+  color: var(--master-color);
+}
+
+.footer .up {
+  background-color: var(--main-color);
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  transition: 0.3s;
+}
+
+.footer .up:hover {
+  transform: scale(1.2);
+}
+
+/* end footer */
